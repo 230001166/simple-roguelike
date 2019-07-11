@@ -7,6 +7,7 @@ import dpruitt.rooms.*;
 import dpruitt.skills.Attack;
 import dpruitt.skills.Block;
 import dpruitt.skills.useItem;
+import dpruitt.utility.Input;
 
 import java.io.*;
 import java.text.DateFormat;
@@ -14,7 +15,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Scanner;
 
 public class Game {
     Game () {
@@ -65,10 +65,7 @@ public class Game {
                     System.out.println (i + " - " + player.skills.get (i).getName ());
                 }
 
-                Scanner input = new Scanner (System.in);
-                int skillIndex = input.nextInt ();
-
-                if (skillIndex < 0 || skillIndex >= player.skills.size ()) { skillIndex = 0; }
+                int skillIndex = Input.getIntegerInputInRange (0, player.skills.size () - 1);
 
                 player.setBlock (0);
                 player.skills.get (skillIndex).use (player, enemy);
@@ -132,8 +129,7 @@ public class Game {
 
     private void getPlayerInput () {
         System.out.println ("[1] Up [2] Left [3] Down [4] Right [5] Check stats");
-        Scanner input = new Scanner (System.in);
-        int choice = input.nextInt ();
+        int choice = Input.getIntegerInputInRange (1, 5);
 
         switch (choice) {
             case 1:

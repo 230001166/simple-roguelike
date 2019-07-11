@@ -2,8 +2,7 @@ package dpruitt.skills;
 
 import dpruitt.entities.Entity;
 import dpruitt.items.*;
-
-import java.util.Scanner;
+import dpruitt.utility.Input;
 
 public class useItem extends Skill {
     public useItem () {
@@ -18,10 +17,7 @@ public class useItem extends Skill {
                 System.out.println (i + " - " + user.inventory.get (i).getName ());
             }
 
-            Scanner input = new Scanner (System.in);
-            int itemIndex = input.nextInt ();
-
-            if (itemIndex < 0 || itemIndex >= user.inventory.size ()) { itemIndex = 0; }
+            int itemIndex = Input.getIntegerInputInRange (0, user.inventory.size () - 1);
 
             user.inventory.get (itemIndex).use (user);
             user.inventory.remove (itemIndex);

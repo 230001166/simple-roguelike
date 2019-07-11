@@ -1,8 +1,7 @@
 package dpruitt.rooms;
 
 import dpruitt.Game;
-
-import java.util.Scanner;
+import dpruitt.utility.Input;
 
 public class heartRoom extends Room {
     public heartRoom () {
@@ -16,9 +15,7 @@ public class heartRoom extends Room {
         System.out.println ("You see a heart statue. You can either heal or sacrifice your health to gain more max health.\n" +
                 "[1] Heal 25% of Max HP\n" +
                 "[2] Sacrifice half your health to gain 3 Max HP");
-        Scanner input = new Scanner(System.in);
-        int choice = input.nextInt ();
-        if (choice < 1 || choice > 2) { choice = 1; }
+        int choice = Input.getIntegerInputInRange (1, 2);
 
         switch (choice) {
             case 1:

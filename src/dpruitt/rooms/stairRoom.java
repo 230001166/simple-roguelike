@@ -1,8 +1,8 @@
 package dpruitt.rooms;
 
 import dpruitt.Game;
+import dpruitt.utility.Input;
 
-import java.util.Scanner;
 
 public class stairRoom extends Room {
     public stairRoom () {
@@ -13,8 +13,7 @@ public class stairRoom extends Room {
     public void event (Game game) {
         System.out.println ("You have reached the stairs. Do you want to go to the next floor?\n[1] Yes\n[2] No");
 
-        Scanner input = new Scanner (System.in);
-        int choice = input.nextInt ();
+        int choice = Input.getIntegerInputInRange (1, 2);
 
         if (choice == 1) {
             game.setPlayerPosition (2, 2);

@@ -2,9 +2,9 @@ package dpruitt.entities;
 
 import dpruitt.items.Item;
 import dpruitt.skills.*;
+import dpruitt.utility.Input;
 
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Entity {
     private String name = "Entity";
@@ -110,10 +110,7 @@ public class Entity {
         while (promotionPoints > 0) {
             System.out.println ("Boost one of the following stats:\n[1] Attack\n[2] Defense\n[3] Speed\nPoints Left: " + promotionPoints);
 
-            Scanner input = new Scanner (System.in);
-            int choice = 0;
-
-            choice = input.nextInt ();
+            int choice = Input.getIntegerInputInRange (1, 3);
 
             switch (choice) {
                 case 1:
@@ -133,8 +130,7 @@ public class Entity {
 
         if (level == 4) {
             System.out.println ("You can learn a magic spell! Choose between [1] Ice and [2] Fireball.");
-            Scanner input = new Scanner (System.in);
-            int choice = input.nextInt ();
+            int choice = Input.getIntegerInputInRange (1, 2);
 
             switch (choice) {
                 case 1:
@@ -150,8 +146,7 @@ public class Entity {
         }
         if (level == 9) {
             System.out.println ("You can learn a magic spell! Choose between [1] Ice+ and [2] Fireball+.");
-            Scanner input = new Scanner (System.in);
-            int choice = input.nextInt ();
+            int choice = Input.getIntegerInputInRange (1, 2);
 
             switch (choice) {
                 case 1:
