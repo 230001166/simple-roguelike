@@ -1,0 +1,11 @@
+The goal of the game is to get to the fifth floor of the dungeon and slay the evil grand master wizard, Richard Nixon.
+
+At level 4, you have the choice of learning either Ice or Fire.
+Ice can deal 3-6 base damage.
+Fire deals 5 base damage.
+
+At level 9, you have the choice of learning either Ice+ or Fire+.
+Ice+ can deal 5-13 base damage.
+Fireball+ can deal 9 base damage.
+
+The game saves a text file for every character you die with.
